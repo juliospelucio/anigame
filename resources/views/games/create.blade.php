@@ -3,7 +3,7 @@
 @section('content')
 <div class=" container wrapper create-game">
     <h1>Create Game</h1>
-    <form action="/games" method="POST">
+    <form action="/create" method="POST">
         @csrf
         <div class="form-group">
             <label for="name">Name:</label>

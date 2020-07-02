@@ -1,20 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="wrapper games">
-    <ul>
+<div class="container">
+    <div class="row">
         @foreach($games as $game)
-        <li style="font-weight: 900;">Name: <a href="/games/{{$game->id}}">{{$game->name}}</a></li>
-        <li>Gender: {{$game->gender}}</li>
-        <li>Publisher: {{$game->publisher}}</li>
-        <li>Platforms:</li>
-        <ul>
-            @foreach($game->platforms as $platform)
-            <li>{{$platform}}</li>
-            @endforeach
-        </ul>
-        <li>Score: {{$game->score}}</li>
+        <div class="col-4 my-2">
+            <div class="card" style="width: 18rem;">
+                {{-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
+                <div class="card-body">
+                    <h5 class="card-title"><a href="/games/{{$game->id}}">{{$game->name}}</a></h5>
+                    <p class="card-text">Jogo do {{$game->name}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="#" class="card-link">Edit</a></li>
+                    <li class="list-group-item"><a href="#" class="card-link">Delete</a></li>
+                </ul>
+            </div>
+        </div>
         @endforeach
-    </ul>
+    </div>
 </div>
 @endsection
