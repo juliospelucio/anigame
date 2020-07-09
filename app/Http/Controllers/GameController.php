@@ -61,4 +61,9 @@ class GameController extends Controller
         $game->save();
         return redirect('/')->with('mssg', 'Game updated with success');
     }
+
+    public function destroy($id)
+    {
+        // 
+    }
 }
