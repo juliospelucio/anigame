@@ -16,31 +16,17 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3 mt-3">
+        <div class="col-md mt-3">
             <div class="card">
                 <div class="card-body text-center">
                     <a href="/games">List all games</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 mt-3">
+        <div class="col-md mt-3">
             <div class="card">
                 <div class="card-body text-center">
                     <a href="/create">Add a new game</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 mt-3">
-            <div class="card">
-                <div class="card-body text-center">
-                    <a href="/edit/1">Edit a existing game</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 mt-3">
-            <div class="card">
-                <div class="card-body text-center">
-                    <a href>Delete a existing game</a>
                 </div>
             </div>
         </div>

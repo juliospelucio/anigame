@@ -29,3 +29,4 @@ Route::get('/create', 'GameController@create')->name('games.create')->middleware
 Route::post('/create', 'GameController@store')->name('games.create')->middleware('auth');
 Route::get('/edit/{id}', 'GameController@edit')->name('games.edit')->middleware('auth');
 Route::post('/edit/{id}', 'GameController@update')->name('games.update')->middleware('auth');
+Route::post('/destroy/{id}', 'GameController@destroy')->name('games.destroy')->middleware('auth');
