@@ -34,9 +34,9 @@ Route::post('/destroy/game/{id}', 'GameController@destroy')->name('game.destroy'
 
 //Anime routes
 Route::get('/animes', 'AnimeController@index')->name('anime.index')->middleware('auth');
-// Route::get('/game/{id}', 'GameController@show')->name('game.show')->middleware('auth');
+Route::get('/anime/{id}', 'AnimeController@show')->name('anime.show')->middleware('auth');
 Route::get('/create/anime', 'AnimeController@create')->name('anime.create')->middleware('auth');
 Route::post('/create/anime', 'AnimeController@store')->name('anime.store')->middleware('auth');
-// Route::get('/edit/game/{id}', 'GameController@edit')->name('game.edit')->middleware('auth');
-// Route::post('/edit/game/{id}', 'GameController@update')->name('game.update')->middleware('auth');
-// Route::post('/destroy/game/{id}', 'GameController@destroy')->name('game.destroy')->middleware('auth');
+Route::get('/edit/anime/{id}', 'AnimeController@edit')->name('anime.edit')->middleware('auth');
+// Route::post('/edit/anime/{id}', 'AnimeController@update')->name('anime.update')->middleware('auth');
+// Route::post('/destroy/anime/{id}', 'AnimeController@destroy')->name('anime.destroy')->middleware('auth');

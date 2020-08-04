@@ -19,11 +19,11 @@
                 <li class="list-group-item list-group-item-dark"><span class="item-label">Publisher:</span>
                     {{$game->publisher}}</li>
                 <li class="list-group-item list-group-item-dark"><span class="item-label">Platforms:</span></li>
-                @foreach ($game->platforms as $platform)
                 <ul class="col-md my-sm-3">
+                    @foreach ($game->platforms as $platform)
                     <li class="list-group-item list-group-item-dark">{{strtoupper($platform)}}</li>
+                    @endforeach
                 </ul>
-                @endforeach
                 <li class="list-group-item list-group-item-dark"><span class="item-label">Score:</span> {{$game->score}}
                 </li>
             </ul>
