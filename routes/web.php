@@ -38,5 +38,5 @@ Route::get('/anime/{id}', 'AnimeController@show')->name('anime.show')->middlewar
 Route::get('/create/anime', 'AnimeController@create')->name('anime.create')->middleware('auth');
 Route::post('/create/anime', 'AnimeController@store')->name('anime.store')->middleware('auth');
 Route::get('/edit/anime/{id}', 'AnimeController@edit')->name('anime.edit')->middleware('auth');
-// Route::post('/edit/anime/{id}', 'AnimeController@update')->name('anime.update')->middleware('auth');
+Route::post('/edit/anime/{id}', 'AnimeController@update')->name('anime.update')->middleware('auth');
 Route::post('/destroy/anime/{id}', 'AnimeController@destroy')->name('anime.destroy')->middleware('auth');

@@ -7,10 +7,7 @@
             <div class="card">
                 <div class="card-header">Dashboard</div>
                 <div class="card-body text-center">
-                    <div class="alert alert-success" role="alert">
-                        <!-- {{ session('status') }} -->
-                        Session status
-                    </div>What would you like to do?
+                    What would you like to do?
                 </div>
             </div>
         </div>

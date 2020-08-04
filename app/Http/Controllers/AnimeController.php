@@ -65,7 +65,8 @@ class AnimeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $anime = Anime::findOrFail($id);
+        return view('animes.edit', ['anime' => $anime]);
     }
 
     /**
@@ -77,7 +78,9 @@ class AnimeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $anime = Anime::find($id);
+        $anime->update(request()->all());
+        return redirect('/animes')->with('mssg', 'Anime updated with success');
     }
 
     /**
