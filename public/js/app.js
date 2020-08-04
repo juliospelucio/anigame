@@ -1965,13 +1965,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["modalName", "modalId", "modalType"],
   methods: {
     submit: function submit(modalId, modalType) {
       axios.post("/destroy/" + modalType + "/" + modalId).then(function (response) {
         console.log(response);
-        window.location.href = '/' + modalType + 's';
+        window.location.href = "/" + modalType + "s";
       })["catch"](function (error) {
         console.log(error);
       });

@@ -7,7 +7,7 @@
             <div class="d-flex justify-content-start flex-row">
                 <a href="/edit/game/{{$game->id}}" class="btn btn-outline-secondary  px-5 m-1">Edit</a>
                 <a href="/delete/game/{{$game->id}}" class="btn btn-outline-danger  px-5 m-1" data-toggle="modal"
-                    data-target="#deleteModal">Delete</a>
+             data-target="#deleteModal">Delete</a>
             </div>
         </div>
         <div class="col-md-6 my-sm-3">

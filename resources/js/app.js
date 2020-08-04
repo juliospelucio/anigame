@@ -32,7 +32,7 @@ import AnimeList from './components/AnimeList.vue'
 
 const app = new Vue({
     el: '#app',
-    data(){
+    data() {
         return {
             showModal: false
         }

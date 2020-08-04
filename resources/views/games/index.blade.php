@@ -2,6 +2,7 @@
 
 @section('content')
 <div id="app" class="container">
+
     @if (session('mssg'))
     <div class="alert alert-success text-center alert-dismissible" role="alert">
          {{ session('mssg') }}
