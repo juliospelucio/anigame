@@ -19,7 +19,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <form v-on:submit.prevent method="post">
-            <button type="submit" class="btn btn-danger" @click="submit(modaId, modalType)">Delete</button>
+            <button type="submit" class="btn btn-danger" @click="submit(modalId, modalType)">Delete</button>
           </form>
         </div>
       </div>
@@ -32,9 +32,8 @@ export default {
   props: ["modalName", "modalId", "modalType"],
   methods: {
     submit(modalId, modalType) {
-      console.log(id);
       axios
-        .post("/destroy/" + modalType + "/" + modaId)
+        .post("/destroy/" + modalType + "/" + modalId)
         .then((response) => {
           console.log(response);
           window.location.href = '/' + modalType + 's';

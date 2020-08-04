@@ -88,6 +88,8 @@ class AnimeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $anime = Anime::findOrFail($id);
+        $anime->delete();
+        return redirect('/animes')->with('mssg', 'Anime deleted with success');
     }
 }

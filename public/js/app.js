@@ -1969,8 +1969,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ["modalName", "modalId", "modalType"],
   methods: {
     submit: function submit(modalId, modalType) {
-      console.log(id);
-      axios.post("/destroy/" + modalType + "/" + modaId).then(function (response) {
+      axios.post("/destroy/" + modalType + "/" + modalId).then(function (response) {
         console.log(response);
         window.location.href = '/' + modalType + 's';
       })["catch"](function (error) {
@@ -37713,7 +37712,7 @@ var render = function() {
                     attrs: { type: "submit" },
                     on: {
                       click: function($event) {
-                        return _vm.submit(_vm.modaId, _vm.modalType)
+                        return _vm.submit(_vm.modalId, _vm.modalType)
                       }
                     }
                   },

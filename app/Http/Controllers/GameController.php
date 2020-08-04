@@ -66,8 +66,6 @@ class GameController extends Controller
     {
         $game = Game::findOrFail($id);
         $game->delete();
-
-        echo $game; 
         return redirect('/games')->with('mssg', 'Game deleted with success');
     }
 }
