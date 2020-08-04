@@ -27,7 +27,7 @@ class AnimeController extends Controller
      */
     public function create()
     {
-        //
+        return view('animes.create');
     }
 
     /**
@@ -38,7 +38,11 @@ class AnimeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $anime = new Anime();
+        // print_r($request->all());
+        // exit;
+        $anime->create($request->all());
+        return redirect('/animes')->with('mssg', 'Anime saved with success');
     }
 
     /**
@@ -49,7 +53,8 @@ class AnimeController extends Controller
      */
     public function show($id)
     {
-        //
+        $anime = Anime::findOrFail($id);
+        return view('animes.show', ['anime' => $anime]);
     }
 
     /**

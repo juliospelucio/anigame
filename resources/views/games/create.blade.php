@@ -11,11 +11,11 @@
         </div>
         <div class="form-group">
             <label for="gender">Gender</label>
-            <input type="gender" id="gender" name="gender" class="form-control" required>
+            <input type="text" id="gender" name="gender" class="form-control" required>
         </div>
         <div class="form-group">
             <label for="publisher">Publisher</label>
-            <input type="publisher" id="publisher" name="publisher" class="form-control" required>
+            <input type="text" id="publisher" name="publisher" class="form-control" required>
         </div>
         <label>Platforms</label><br>
         <div class="form-check form-check-inline">
