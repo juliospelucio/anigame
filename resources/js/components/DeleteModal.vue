@@ -10,16 +10,16 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="deleteModalLabel">Are you sure you want to delete this game?</h5>
+          <h5 class="modal-title" id="deleteModalLabel">Are you sure you want to delete this {{modalType}}?</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">{{gameName}}</div>
+        <div class="modal-body">{{modalName}}</div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <form v-on:submit.prevent method="post">
-            <button type="submit" class="btn btn-danger" @click="submit(gameId)">Delete</button>
+            <button type="submit" class="btn btn-danger" @click="submit(modaId, modalType)">Delete</button>
           </form>
         </div>
       </div>
@@ -29,15 +29,15 @@
 
 <script>
 export default {
-  props: ["gameName", "gameId"],
+  props: ["modalName", "modalId", "modalType"],
   methods: {
-    submit(id) {
+    submit(modalId, modalType) {
       console.log(id);
       axios
-        .post("/destroy/game/" + id)
+        .post("/destroy/" + modalType + "/" + modaId)
         .then((response) => {
           console.log(response);
-          window.location.href = '/games';
+          window.location.href = '/' + modalType + 's';
         })
         .catch((error) => {
           console.log(error);

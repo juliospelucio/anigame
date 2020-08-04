@@ -1966,13 +1966,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["gameName", "gameId"],
+  props: ["modalName", "modalId", "modalType"],
   methods: {
-    submit: function submit(id) {
+    submit: function submit(modalId, modalType) {
       console.log(id);
-      axios.post("/destroy/game/" + id).then(function (response) {
+      axios.post("/destroy/" + modalType + "/" + modaId).then(function (response) {
         console.log(response);
-        window.location.href = '/games';
+        window.location.href = '/' + modalType + 's';
       })["catch"](function (error) {
         console.log(error);
       });
@@ -37665,10 +37665,24 @@ var render = function() {
     [
       _c("div", { staticClass: "modal-dialog", attrs: { role: "document" } }, [
         _c("div", { staticClass: "modal-content" }, [
-          _vm._m(0),
+          _c("div", { staticClass: "modal-header" }, [
+            _c(
+              "h5",
+              { staticClass: "modal-title", attrs: { id: "deleteModalLabel" } },
+              [
+                _vm._v(
+                  "Are you sure you want to delete this " +
+                    _vm._s(_vm.modalType) +
+                    "?"
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _vm._m(0)
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "modal-body" }, [
-            _vm._v(_vm._s(_vm.gameName))
+            _vm._v(_vm._s(_vm.modalName))
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "modal-footer" }, [
@@ -37699,7 +37713,7 @@ var render = function() {
                     attrs: { type: "submit" },
                     on: {
                       click: function($event) {
-                        return _vm.submit(_vm.gameId)
+                        return _vm.submit(_vm.modaId, _vm.modalType)
                       }
                     }
                   },
@@ -37718,26 +37732,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
-      _c(
-        "h5",
-        { staticClass: "modal-title", attrs: { id: "deleteModalLabel" } },
-        [_vm._v("Are you sure you want to delete this game?")]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "close",
-          attrs: {
-            type: "button",
-            "data-dismiss": "modal",
-            "aria-label": "Close"
-          }
-        },
-        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
-      )
-    ])
+    return _c(
+      "button",
+      {
+        staticClass: "close",
+        attrs: {
+          type: "button",
+          "data-dismiss": "modal",
+          "aria-label": "Close"
+        }
+      },
+      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+    )
   }
 ]
 render._withStripped = true
