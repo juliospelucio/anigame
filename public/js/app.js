@@ -1974,7 +1974,7 @@ __webpack_require__.r(__webpack_exports__);
     submit: function submit(modalId, modalType) {
       axios.post("/destroy/" + modalType + "/" + modalId).then(function (response) {
         console.log(response);
-        window.location.href = "/" + modalType + "s";
+        window.location.href = "/" + modalType + "s"; // $('#deleteModal').modal('hide');
       })["catch"](function (error) {
         console.log(error);
       });
@@ -37704,21 +37704,14 @@ var render = function() {
                 on: {
                   submit: function($event) {
                     $event.preventDefault()
+                    return _vm.submit(_vm.modalId, _vm.modalType)
                   }
                 }
               },
               [
                 _c(
                   "button",
-                  {
-                    staticClass: "btn btn-danger",
-                    attrs: { type: "submit" },
-                    on: {
-                      click: function($event) {
-                        return _vm.submit(_vm.modalId, _vm.modalType)
-                      }
-                    }
-                  },
+                  { staticClass: "btn btn-danger", attrs: { type: "submit" } },
                   [_vm._v("Delete")]
                 )
               ]

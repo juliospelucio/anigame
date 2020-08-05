@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Anime;
 
 class AnimeController extends Controller
@@ -91,8 +92,8 @@ class AnimeController extends Controller
      */
     public function destroy($id)
     {
+        // Session::flash('message', 'Anime deleted with success'); 
         $anime = Anime::findOrFail($id);
         $anime->delete();
-        return redirect('/animes')->with('mssg', 'Anime deleted with success');
     }
 }

@@ -29,6 +29,6 @@
             </ul>
         </div>
     </div>
-    <delete-modal game-name="{{$game->name}}" game-id="{{$game->id}}"></delete-modal>
+    <delete-modal modal-name="{{$game->name}}" modal-id="{{$game->id}}" modal-type="game"></delete-modal>
 </div>
 @endsection

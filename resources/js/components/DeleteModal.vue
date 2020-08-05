@@ -21,8 +21,8 @@
         <div class="modal-body">{{modalName}}</div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <form v-on:submit.prevent method="post">
-            <button type="submit" class="btn btn-danger" @click="submit(modalId, modalType)">Delete</button>
+          <form v-on:submit.prevent="submit(modalId, modalType)" method="post">
+            <button type="submit" class="btn btn-danger">Delete</button>
           </form>
         </div>
       </div>
@@ -39,7 +39,9 @@ export default {
         .post("/destroy/" + modalType + "/" + modalId)
         .then((response) => {
           console.log(response);
+          
           window.location.href = "/" + modalType + "s";
+          // $('#deleteModal').modal('hide');
         })
         .catch((error) => {
           console.log(error);
