@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use App\Models\File;
+use Illuminate\Http\Request;;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class GameController extends Controller
 {
@@ -30,14 +33,23 @@ class GameController extends Controller
         return view('games.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
+        
         $game = new Game();
         $game->name = request('name');
         $game->gender = request('gender');
         $game->publisher = request('publisher');
         $game->platforms = request('platforms');
         $game->score = request('score');
+        
+        //checks game images 
+        if (request()->hasFile('image')) {
+            $path = request()->file('image')->store('/img/games');
+            $game->url = $path;
+            // echo "<img src='http://localhost:8000/storage/img/games/fox.jpeg'></img>";
+        }
+        // exit;
         $game->save();
 
         return redirect('/games')->with('mssg', 'Game saved with success');

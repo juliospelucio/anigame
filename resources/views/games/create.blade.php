@@ -3,7 +3,7 @@
 @section('content')
 <div class=" container wrapper create-game">
     <h1>Create Game</h1>
-    <form action="/create/game" method="POST">
+    <form action="/create/game" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="name">Name:</label>
@@ -40,7 +40,10 @@
             <label for="score">Score</label>
             <input type="number" min="0" max="9.9" step="0.1" id="score" name="score" class="form-control" required>
         </div>
-
+        <div class="form-group">
+            <label for="image">Choose Image</label>
+            <input id="image" type="file" name="image">
+        </div>
         <input type="submit" value="Save game" class="btn btn-secondary">
     </form>
 </div>

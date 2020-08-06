@@ -21,6 +21,7 @@ class CreateGamesTable extends Migration
             $table->string('publisher');
             $table->json('platforms')->nullable();
             $table->decimal('score', 3, 2);
+            $table->string('url', 80);;
         });
     }
 
