@@ -47,8 +47,7 @@ class GameController extends Controller
         if (request()->hasFile('image')) {
             $path = request()->file('image')->store('/public/games');
             $fname = request()->file('image')->hashName();
-            // $fextension = request()->file('image')->extension();
-            $game->url = 'games/'.$fname;
+            $game->url = 'games/' . $fname;
         }
         $game->save();
 
