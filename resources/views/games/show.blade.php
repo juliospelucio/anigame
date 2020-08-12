@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 mt-md-5">
-        {{-- <img src="http://localhost:8000/storage/"{{$game->url}} alt="game-name" class="img-fluid"> --}}
+        <img src="http://localhost:8000/storage/"{{$game->url}} alt="game-name" class="img-fluid">
             <div class="d-flex justify-content-start flex-row">
                 <a href="/edit/game/{{$game->id}}" class="btn btn-outline-secondary  px-5 m-1">Edit</a>
                 <a href="/delete/game/{{$game->id}}" class="btn btn-outline-danger  px-5 m-1" data-toggle="modal"
@@ -20,9 +20,7 @@
                     {{$game->publisher}}</li>
                 <li class="list-group-item list-group-item-dark"><span class="item-label">Platforms:</span></li>
                 <ul class="col-md my-sm-3">
-                    @foreach ($game->platforms as $platform)
-                    <li class="list-group-item list-group-item-dark">{{strtoupper($platform)}}</li>
-                    @endforeach
+                    {{$game->platforms}}
                 </ul>
                 <li class="list-group-item list-group-item-dark"><span class="item-label">Score:</span> {{$game->score}}
                 </li>
