@@ -19,14 +19,26 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('game-list', require('./components/GameList.vue').default);
+// Vue.component('delete-modal', require('./components/DeleteModal.vue'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+import DeleteModal from './components/DeleteModal.vue'
+import AnimeList from './components/AnimeList.vue'
 
 const app = new Vue({
     el: '#app',
+    data() {
+        return {
+            showModal: false
+        }
+    },
+    components: {
+        DeleteModal,
+        AnimeList
+    }
 });

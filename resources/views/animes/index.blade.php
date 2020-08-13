@@ -2,22 +2,21 @@
 
 @section('content')
 <div id="app" class="container">
-
     @if (session('mssg'))
     <div class="alert alert-success text-center alert-dismissible" role="alert">
          {{ session('mssg') }}
     </div>
     @endif
-    @if ($games->isEmpty())
+    @if ($animes->isEmpty())
     <div class="alert alert-info text-center" role="alert">
-        Any games found yet :/
+        Any animes found yet :/
     </div>
     @else
-    <h2 class="text-center">All avaliable games</h2>
+    <h2 class="text-center">All avaliable animes</h2>
     @endif
     <div class="card-deck">
-        <game-list v-for="game in {{$games}}" v-bind:game="game" :key="game.id">
-        </game-list>
+        <anime-list v-for="anime in {{$animes}}" v-bind:anime="anime" :key="anime.id">
+        </anime-list>
     </div>
 </div>
 @endsection
