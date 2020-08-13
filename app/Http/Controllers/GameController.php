@@ -6,8 +6,8 @@ use App\Game;
 use App\Models\File;
 use Illuminate\Http\Request;;
 
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Storage;
 
 class GameController extends Controller
 {
@@ -43,6 +43,23 @@ class GameController extends Controller
         $game->publisher = request('publisher');
         $game->platforms = request('platforms');
         $game->score = request('score');
+
+        $validator = Validator::make(request()->all(), [
+            'name' => 'required|unique:games|max:255',
+            'gender' => 'required',
+            'publisher' => 'required',
+            'platforms' => 'required',
+            'score' => 'required',
+            'score' => 'required',
+            'image' => 'required|mimes:jpeg,png|max:1014'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('create/game')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         //checks game images 
         if (request()->hasFile('image')) {
             $path = request()->file('image')->store('/public/games');
