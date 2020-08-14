@@ -8,6 +8,7 @@ use Illuminate\Http\Request;;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class GameController extends Controller
 {
@@ -22,10 +23,6 @@ class GameController extends Controller
     public function show($id)
     {
         $game = Game::findOrFail($id);
-        // echo "<pre>";
-        // print_r($game);
-        // echo "</pre>";
-        // exit;
         return view('games.show', ['game' => $game]);
     }
 
@@ -94,6 +91,7 @@ class GameController extends Controller
     public function destroy($id)
     {
         $game = Game::findOrFail($id);
+        Storage::delete('/public/'.$game->url);
         $game->delete();
         Session::flash('mssg', 'Game deleted with success');
         // return redirect('/games')->with('mssg', 'Game deleted with success');
