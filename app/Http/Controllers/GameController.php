@@ -91,9 +91,8 @@ class GameController extends Controller
     public function destroy($id)
     {
         $game = Game::findOrFail($id);
-        Storage::delete('/public/'.$game->url);
+        Storage::delete('/public/' . $game->url);
         $game->delete();
         Session::flash('mssg', 'Game deleted with success');
-        // return redirect('/games')->with('mssg', 'Game deleted with success');
     }
 }

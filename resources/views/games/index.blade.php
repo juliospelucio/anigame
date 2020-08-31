@@ -5,7 +5,7 @@
 
     @if (session('mssg'))
     <div class="alert alert-success text-center alert-dismissible" role="alert">
-         {{ session('mssg') }}
+        {{ session('mssg') }}
     </div>
     @endif
     @if ($games->isEmpty())
@@ -16,8 +16,8 @@
     <h2 class="text-center">All avaliable games</h2>
     @endif
     <div class="card-deck">
-        <game-list v-for="game in {{$games}}" v-bind:game="game" :key="game.id">
-        </game-list>
+        <obj-list v-for="game in {{$games}}" v-bind:object="game" type="game" :key="game.id">
+        </obj-list>
     </div>
 </div>
 @endsection

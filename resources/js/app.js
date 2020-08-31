@@ -19,7 +19,7 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('game-list', require('./components/GameList.vue').default);
+Vue.component('obj-list', require('./components/ObjList.vue').default);
 // Vue.component('delete-modal', require('./components/DeleteModal.vue'));
 
 /**
@@ -34,7 +34,6 @@ const app = new Vue({
     el: '#app',
     data() {
         return {
-            showModal: false
         }
     },
     components: {
