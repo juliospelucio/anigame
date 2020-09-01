@@ -2,9 +2,11 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-6 mt-md-5">
-            <img src="/storage/{{$game->url}}" alt="game-name" class="img-fluid">
-            <div class="d-flex justify-content-start flex-row">
+        <div class="col-md-6 mt-md-4">
+            <div class="d-flex justify-content-center">
+                <img src="/storage/{{$game->url}}" alt="game-name" class="img-fluid w-50">
+            </div>
+            <div class="d-flex justify-content-center mt-2">
                 <a href="/edit/game/{{$game->id}}" class="btn btn-outline-secondary  px-5 m-1">Edit</a>
                 <a href="/delete/game/{{$game->id}}" class="btn btn-outline-danger  px-5 m-1" data-toggle="modal"
                     data-target="#deleteModal">Delete</a>
